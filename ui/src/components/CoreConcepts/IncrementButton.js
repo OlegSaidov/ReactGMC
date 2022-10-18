@@ -7,7 +7,7 @@ class IncrementButton extends React.Component {
         <div className="d-grid gap-2">
         <Button
          variant='info'
-         onClick={this.props.increment}
+         onClick={this.props.onClick}
          >
           Increment
         </Button>

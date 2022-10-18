@@ -7,7 +7,7 @@ class DecrementButton extends React.PureComponent {
         <div className="d-grid gap-2">
         <Button
          variant='info'
-         onClick={this.props.decrement}
+         onClick={this.props.onClick}
          >
           Decrement
         </Button>

@@ -8,15 +8,15 @@ import ResetButton from './ResetButton';
 function Counter () {
     const [count, setCount] = useState(0);
 
-    function increment () {
+    function handleIncrementButtonClick () {
         setCount(count + 1);
     }
 
-    function decrement () {
+    function handleDecrementButtonClick () {
         setCount(count - 1);
     }
 
-    function reset () {
+    function handleResetButtonClick () {
         setCount(0);
     }
 
@@ -29,15 +29,15 @@ function Counter () {
              </Row>
              <Row>
                   <Col>
-                       <IncrementButton increment={increment}/>
+                       <IncrementButton onClick={handleIncrementButtonClick}/>
                   </Col>
                   <Col>
-                       <DecrementButton decrement={decrement}/>
+                       <DecrementButton onClick={handleDecrementButtonClick}/>
                   </Col>
              </Row>
              <Row className='mt-4'>
                   <Col>
-                       <ResetButton reset={reset}/>
+                       <ResetButton onClick={handleResetButtonClick}/>
                   </Col>
               </Row>
            </Container>

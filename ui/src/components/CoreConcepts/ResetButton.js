@@ -7,7 +7,7 @@ class DecrementButton extends React.PureComponent {
          <div className="d-grid gap-2">
         <Button
          variant='danger'
-         onClick={this.props.reset}
+         onClick={this.props.onClick}
          >
           Reset
         </Button>
