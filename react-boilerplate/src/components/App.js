@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 function App () {
-    return <div>
+  return <div>
         <h1>Custom React Boilerplate!</h1>
     </div>
 }
 
-export default App;
+export default App
