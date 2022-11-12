@@ -1,7 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default
-const styledComponentsTransformer = createStyledComponentsTransformer()
 
 module.exports = {
   entry: './src/index.js', // App entry point
@@ -21,10 +19,7 @@ module.exports = {
       {
         test: /\.tsx?$/, // keeping for type-checking, handle ts files to be converted to es5
         use: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-          getCustomTransformers: () => ({ before: [styledComponentsTransformer] }) // ts support for styled components
-        }
+        exclude: /node_modules/
       }
     ]
   },
