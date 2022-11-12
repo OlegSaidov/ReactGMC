@@ -1,12 +1,14 @@
 {
     "presets": [
         "@babel/preset-env",
-        "@babel/preset-react",
-         [
-        "babel-plugin-styled-components",  // form minification of styles, ssr and nicer debugging of styled components
-            {
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        [
+          "babel-plugin-styled-components",
+          {
             "ssr": false
-            }
+          }
         ]
-    ]
+      ]
 }
