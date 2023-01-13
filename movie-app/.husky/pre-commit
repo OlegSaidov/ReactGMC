@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
-cd react-boilerplate
-npm run lint
+cd movie-app
+#npm run lint-staged

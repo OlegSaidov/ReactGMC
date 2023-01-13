@@ -1,7 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default
-const styledComponentsTransformer = createStyledComponentsTransformer()
 
 module.exports = {
   entry: './src/index.js', // App entry point
@@ -12,6 +10,21 @@ module.exports = {
   module: { // support for files other than old JS and JSON, which are supported by default
     rules: [
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpe?g|gif|ttf)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192
+            }
+          }
+        ]
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/, // handle js files to be converted to es5
         use: {
@@ -21,18 +34,7 @@ module.exports = {
       {
         test: /\.tsx?$/, // keeping for type-checking, handle ts files to be converted to es5
         use: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-          getCustomTransformers: () => ({ before: [styledComponentsTransformer] }) // ts support for styled components
-        }
-      },
-      {
-        test: /\.scss$/, // so we can import './style.scss' into js file
-        use: [
-          'style-loader', // add loaded css to the html page
-          'css-loader', // handle css from sass-loader
-          'sass-loader' // load and convert scss to css
-        ]
+        exclude: /node_modules/
       }
     ]
   },
